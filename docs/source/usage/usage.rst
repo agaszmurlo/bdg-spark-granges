@@ -1,6 +1,8 @@
  .. sectnum::
      :start: 3
 
+.. include:: ../substitutions.rst
+
 Usage
 =====
 
@@ -10,6 +12,8 @@ Ad-hoc analysis
 #################
 
 For ad-hoc analysis SeQuiLa provides two usage patterns:
+
+
 
 Using predefined scripts in docker container
 **********************************************
@@ -28,14 +32,14 @@ Sample usage of SeQuiLa wrapped in docker container's scripts. The snippet below
 
    cd  /data/sequila
 
-   wget http://.../NA12878.slice.bam
+   wget http://biodatageeks.org/sequila/data/NA12878.slice.bam
 
-   wget http://.../tgp_exome_hg18.saf
+   wget http://biodatageeks.org/sequila/data/tgp_exome_hg18.saf
 
    docker run --rm -it -p 4040:4040 \ 
       -v /data/sequila:/data \ 
       -e USERID=$UID -e GROUPID=$(id -g) \
-      biodatageeks/bdg-toolset \ 
+      biodatageeks/bdg-sequila \ 
       featureCounts -- \ 
       -o /data/featureOutput -F SAF \
       -a /data/tgp_exome_hg18.saf /data/NA12878.slice.bam

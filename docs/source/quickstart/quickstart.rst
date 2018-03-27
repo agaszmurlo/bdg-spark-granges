@@ -23,10 +23,10 @@ In your command line pull docker image from Docker Hub and invoke smoketests
 
 .. code-block:: bash
 
-   docker pull biodatageeks/bdg-toolset
+   docker pull biodatageeks/bdg-quickstart
 
    docker run -e USERID=$UID -e GROUPID=$(id -g) \
-     biodatageeks/bdg-toolset \
+     biodatageeks/bdg-sequila \
      bdg-shell -i /tmp/smoketest.scala
 
 
