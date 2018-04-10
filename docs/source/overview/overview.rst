@@ -26,6 +26,7 @@ SeQuiLa can be easily integrated in your existing processing pipeline. And this 
 For details see: :doc:`../usage/usage`
 
 
+
 Algorithm
 ###########
 
@@ -33,4 +34,27 @@ SeQuiLa's range joins are based on IntervalTree algorithm.
 
 <TODO> ... More on algorithm and optimizations
 
+
+Tests
+######
+
+Accuracy
+*********
+
+SeQuiLa's results were tested for compatibility with GRganges R package. It achieved 100% accuracy rate.
+
+
+Performance tests
+******************
+
+During performance testing phase we focused on similar tools as well as compared our strategy against default Spark strategy used for genomic interval queries. 
+
+Repositories
+############
+
+SeQuiLa's source code is publicly available at GitHub: `<https://github.com/ZSI-Bio/bdg-spark-granges>`_
+
+Maven repository: `<https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/>`_
+
+Docker Hub: `<https://hub.docker.com/r/biodatageeks/bdg-sequila/>`_
 
