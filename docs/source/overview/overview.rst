@@ -55,7 +55,7 @@ Repositories
 You can find SeQuiLa publicly available in following repositories:
 
 +------------+-----------------------------------------------------------------------+
-| GitHub     |  `<https://github.com/ZSI-Bio/bdg-spark-granges>`_                    |
+| GitHub     |  `<https://github.com/ZSI-Bio/bdg-sequila>`_                    |
 +------------+-----------------------------------------------------------------------+
 | Maven      |  `<https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/>`_    |
 +------------+-----------------------------------------------------------------------+
