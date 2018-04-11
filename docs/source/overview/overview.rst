@@ -50,11 +50,16 @@ Performance tests
 During performance testing phase we focused on similar tools as well as compared our strategy against default Spark strategy used for genomic interval queries. 
 
 Repositories
-############
+#############
 
-SeQuiLa's source code is publicly available at GitHub: `<https://github.com/ZSI-Bio/bdg-spark-granges>`_
+You can find SeQuiLa publicly available in following repositories:
 
-Maven repository: `<https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/>`_
++------------+-----------------------------------------------------------------------+
+| GitHub     |  `<https://github.com/ZSI-Bio/bdg-spark-granges>`_                    |
++------------+-----------------------------------------------------------------------+
+| Maven      |  `<https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/>`_    |
++------------+-----------------------------------------------------------------------+
+| Docker Hub |  `<https://hub.docker.com/r/biodatageeks/bdg-sequila/>`_              |
++------------+-----------------------------------------------------------------------+
 
-Docker Hub: `<https://hub.docker.com/r/biodatageeks/bdg-sequila/>`_
 
