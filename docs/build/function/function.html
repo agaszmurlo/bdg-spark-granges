@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4   SeQuiLa API &mdash; bdg-sequila 0.3-SNAPSHOT documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="bdg-sequila 0.3-SNAPSHOT documentation" href="../index.html"/>
+        <link rel="next" title="5   Usecases" href="../usecases/usecases.html"/>
+        <link rel="prev" title="3   Usage" href="../usage/usage.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> bdg-sequila
+          
+
+          
+            
+            <img src="../_static/sequila.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3-SNAPSHOT
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">1&nbsp;&nbsp;&nbsp;Quickstart</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">2&nbsp;&nbsp;&nbsp;Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/usage.html">3&nbsp;&nbsp;&nbsp;Usage</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4&nbsp;&nbsp;&nbsp;SeQuiLa API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-usage">4.1&nbsp;&nbsp;&nbsp;General usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#find-overlaps-basic">4.1.1&nbsp;&nbsp;&nbsp;Find overlaps - basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#find-overlaps-within-chromosomes">4.1.2&nbsp;&nbsp;&nbsp;Find overlaps within chromosomes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-builtin-data-sources-for-bam-and-adam-file-formats">4.2&nbsp;&nbsp;&nbsp;Using builtin data sources for BAM and ADAM file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-udfs">4.3&nbsp;&nbsp;&nbsp;Using UDFs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shift">4.3.1&nbsp;&nbsp;&nbsp;shift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resize">4.3.2&nbsp;&nbsp;&nbsp;resize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calcoverlap">4.3.3&nbsp;&nbsp;&nbsp;calcOverlap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flank">4.3.4&nbsp;&nbsp;&nbsp;flank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#promoters">4.3.5&nbsp;&nbsp;&nbsp;promoters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reflect">4.3.6&nbsp;&nbsp;&nbsp;reflect</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-parameteres">4.4&nbsp;&nbsp;&nbsp;Additional parameteres</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#minoverlap">4.4.1&nbsp;&nbsp;&nbsp;minOverlap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maxgap">4.4.2&nbsp;&nbsp;&nbsp;maxGap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maxbroadcastsize">4.4.3&nbsp;&nbsp;&nbsp;maxBroadcastSize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usejoinorder">4.4.4&nbsp;&nbsp;&nbsp;useJoinOrder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/usecases.html">5&nbsp;&nbsp;&nbsp;Usecases</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../citation/citation.html">6&nbsp;&nbsp;&nbsp;License and citation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bdg-sequila</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>4&nbsp;&nbsp;&nbsp;SeQuiLa API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/function/function.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a href="https://github.com/ZSI-Bio/bdg-sequila"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a><blockquote>
+<div></div></blockquote>
+<div class="section" id="sequila-api">
+<h1>4&nbsp;&nbsp;&nbsp;SeQuiLa API<a class="headerlink" href="#sequila-api" title="Permalink to this headline">¶</a></h1>
+<p>The API that is provided by SeQuiLa is not a set of predifined functions but rather exposing flexible and enhanced SQL interface to quering genomic datasets. Enhanced in terms of speed in performing range joins between datasets which is crucial to data analysis in bioinformatics</p>
+<p>Below we will describe how to construct SQL queries to efficiently join genomic datasets with SeQuiLa.</p>
+<div class="section" id="general-usage">
+<h2>4.1&nbsp;&nbsp;&nbsp;General usage<a class="headerlink" href="#general-usage" title="Permalink to this headline">¶</a></h2>
+<p>Let’s assume that you already have prepared or imported two datasets <code class="docutils literal"><span class="pre">s1</span></code> and <code class="docutils literal"><span class="pre">s2</span></code> which both contain location indices of start and end of interval (usually named: start, end). Optionally you may also want to take chromosome name into account (usually chr).</p>
+<p>You have to registral SeQuiLa extrastrategy and prepare SQL query that will be performed.</p>
+<div class="section" id="find-overlaps-basic">
+<h3>4.1.1&nbsp;&nbsp;&nbsp;Find overlaps - basic<a class="headerlink" href="#find-overlaps-basic" title="Permalink to this headline">¶</a></h3>
+<p>Range join on interval on two datasets can be defined in SQL. You may want to select all resulting columns <code class="docutils literal"><span class="pre">`select</span> <span class="pre">*</span> <span class="pre">`</span></code> or just a subset of your preference.  As a result of performing this query by SparkSQL you will get results stored in another dataset</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="n">sqlQuery</span> <span class="o">=</span>
+   <span class="n">s</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">     |SELECT *</span>
+<span class="s2">     |FROM s1 JOIN s2</span>
+<span class="s2">     |ON (end1&gt;=start1 and start1&lt;=end2 )</span>
+<span class="s2">     &quot;&quot;&quot;</span>
+<span class="n">val</span> <span class="n">res</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This result can be then used for various data manipulations and for further pipeline implementation.</p>
+</div>
+<div class="section" id="find-overlaps-within-chromosomes">
+<h3>4.1.2&nbsp;&nbsp;&nbsp;Find overlaps within chromosomes<a class="headerlink" href="#find-overlaps-within-chromosomes" title="Permalink to this headline">¶</a></h3>
+<p>If your dataset contains chromosomes information as well you may want to add additional constraint to join condition so as to find only overlaps from the same chromosome.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">val</span> <span class="n">sqlQuery</span> <span class="o">=</span>
+   <span class="n">s</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">   |SELECT *</span>
+<span class="s2">   |FROM s1 JOIN s2</span>
+<span class="s2">   |ON (s1.chr=s2.chr and s1.end&gt;=s2.start and s1.start&lt;=s2.end )</span>
+<span class="s2">   &quot;&quot;&quot;</span>
+<span class="n">val</span> <span class="n">res</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-builtin-data-sources-for-bam-and-adam-file-formats">
+<h2>4.2&nbsp;&nbsp;&nbsp;Using builtin data sources for BAM and ADAM file formats<a class="headerlink" href="#using-builtin-data-sources-for-bam-and-adam-file-formats" title="Permalink to this headline">¶</a></h2>
+<p>&lt;TODO describe BAM/ADAM data source and creating tables&gt;</p>
+</div>
+<div class="section" id="using-udfs">
+<h2>4.3&nbsp;&nbsp;&nbsp;Using UDFs<a class="headerlink" href="#using-udfs" title="Permalink to this headline">¶</a></h2>
+<p>SeQuiLa introduces several UserDefinedFunctions.</p>
+<div class="section" id="shift">
+<h3>4.3.1&nbsp;&nbsp;&nbsp;shift<a class="headerlink" href="#shift" title="Permalink to this headline">¶</a></h3>
+<p>Shift function is performing operation of shifting the ranges by a specified number of positions. To use the function within query it needs to be registered. Sample query using shift function:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">spark</span><span class="o">.</span><span class="n">sqlContext</span><span class="o">.</span><span class="n">udf</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;shift&quot;</span><span class="p">,</span> <span class="n">RangeMethods</span><span class="o">.</span><span class="n">shift</span> <span class="n">_</span><span class="p">)</span>
+
+ <span class="n">val</span> <span class="n">query</span> <span class="o">=</span>
+  <span class="n">s</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    |SELECT start, end, shift(start,end,5) as shiftedInterval FROM ref</span>
+<span class="s2">   &quot;&quot;&quot;</span><span class="o">.</span><span class="n">stripMargin</span>
+</pre></div>
+</div>
+<p>It returns range with start and end fields.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">|-- start: integer (nullable = true)</span>
+<span class="go">|-- end: integer (nullable = true)</span>
+<span class="go">|-- shiftedInterval: struct (nullable = true)</span>
+<span class="go">|    |-- start: integer (nullable = false)</span>
+<span class="go">|    |-- end: integer (nullable = false)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="resize">
+<h3>4.3.2&nbsp;&nbsp;&nbsp;resize<a class="headerlink" href="#resize" title="Permalink to this headline">¶</a></h3>
+<p>Resize function is performing operation of extending the range by specified width. It returns range with start and end fields. Sample query using resize function:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.udf.register(&quot;resize&quot;, RangeMethods.resize _)</span>
+
+<span class="go"> val query =</span>
+<span class="go">  s&quot;&quot;&quot;</span>
+<span class="go">     |SELECT start, end, resize(start,end,5,&quot;center&quot;) as resizedInterval FROM ref</span>
+<span class="go">   &quot;&quot;&quot;.stripMargin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="calcoverlap">
+<h3>4.3.3&nbsp;&nbsp;&nbsp;calcOverlap<a class="headerlink" href="#calcoverlap" title="Permalink to this headline">¶</a></h3>
+<p>calcOverlap function returns the width of overlap between intervals. To use the function within query it needs to be registered. Sample query using overlaplenght function:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.udf.register(&quot;overlaplength&quot;, RangeMethods.calcOverlap _)</span>
+
+<span class="go">val query =</span>
+<span class="go">  s&quot;&quot;&quot;</span>
+<span class="go">    |SELECT * FROM reads JOIN targets</span>
+<span class="go">    |ON (targets.contigName=reads.contigName</span>
+<span class="go">    |AND</span>
+<span class="go">    |reads.end &gt;=targets.start</span>
+<span class="go">    |AND</span>
+<span class="go">    |reads.start&lt;= targets.end</span>
+<span class="go">    | AND</span>
+<span class="go">    |overlaplength(reads.start,reads.end,targets.start,targets.end)&gt;=10</span>
+<span class="go">    |)</span>
+<span class="go">    |</span>
+<span class="go">      &quot;&quot;&quot;.stripMargin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flank">
+<h3>4.3.4&nbsp;&nbsp;&nbsp;flank<a class="headerlink" href="#flank" title="Permalink to this headline">¶</a></h3>
+<p>Flank function is performing operation of calculating the flanking range with specified width. First boolean argument indicates whether flanking should be performed from start of range (true) or end (false).
+Second boolean argument set to true indicates that flanking range should contain not only outside of original range, but also inside. In that case width of flanking range is doubled. Flank function returns range with start and end fields. Sample query using flank function:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.udf.register(&quot;flank&quot;, RangeMethods.flank _)</span>
+
+<span class="go"> val query =</span>
+<span class="go">   s&quot;&quot;&quot;</span>
+<span class="go">     |SELECT start, end, flank(start,end,5,true,true) as flankedInterval FROM ref</span>
+<span class="go">    &quot;&quot;&quot;.stripMargin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="promoters">
+<h3>4.3.5&nbsp;&nbsp;&nbsp;promoters<a class="headerlink" href="#promoters" title="Permalink to this headline">¶</a></h3>
+<p>Promoters function is performing operation of calculating promoter for the range with given upstream and downstream. It returns range with start and end fields. Sample query using promoters function:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.udf.register(&quot;promoters&quot;, RangeMethods.promoters _)</span>
+
+<span class="go">val query =</span>
+<span class="go">  s&quot;&quot;&quot;</span>
+<span class="go">    |SELECT start, end, promoters(start,end,100,20) as promoterInterval FROM ref</span>
+<span class="go">   &quot;&quot;&quot;.stripMargin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reflect">
+<h3>4.3.6&nbsp;&nbsp;&nbsp;reflect<a class="headerlink" href="#reflect" title="Permalink to this headline">¶</a></h3>
+<p>Reflect function is performing operation of reversing the range relative to specified reference bounds. It returns range with start and end fields. Sample query using reflect function:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.udf.register(&quot;reflect&quot;, RangeMethods.reflect _)</span>
+
+<span class="go">val query =</span>
+<span class="go">  s&quot;&quot;&quot;</span>
+<span class="go">    |SELECT start, end, reflect(start,end,11000,15000) as reflectedInterval FROM ref</span>
+<span class="go">   &quot;&quot;&quot;.stripMargin</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="additional-parameteres">
+<h2>4.4&nbsp;&nbsp;&nbsp;Additional parameteres<a class="headerlink" href="#additional-parameteres" title="Permalink to this headline">¶</a></h2>
+<p>Currently SeQuiLa provides three additional parameters that impact joining in terms of results and speed of execution</p>
+<div class="section" id="minoverlap">
+<h3>4.4.1&nbsp;&nbsp;&nbsp;minOverlap<a class="headerlink" href="#minoverlap" title="Permalink to this headline">¶</a></h3>
+<p>This parameter is defining the minimal overlapping positions for interval. The default value is set to 1, meaning that two intervals are considered overlapping if they have at least one position in common.</p>
+<p>Parameter is set via configuration:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.setConf(&quot;minOverlap&quot;,&quot;5&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="maxgap">
+<h3>4.4.2&nbsp;&nbsp;&nbsp;maxGap<a class="headerlink" href="#maxgap" title="Permalink to this headline">¶</a></h3>
+<p>This parameter is defining possible separation of intervals of maxGap or less and still consider them as overlapping. The default is equal to 0.</p>
+<p>Parameter is set via configuration:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.setConf(&quot;maxGap&quot;,&quot;10&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="maxbroadcastsize">
+<h3>4.4.3&nbsp;&nbsp;&nbsp;maxBroadcastSize<a class="headerlink" href="#maxbroadcastsize" title="Permalink to this headline">¶</a></h3>
+<p>This parameter is defining the decision boundary for choosing to broadcast whole table (with all columns) to the tree (prefered for narrow dataframes) or just intervals (preferred for wider dataframes). When whole table is broadcast the solution os more memory-demanding but joining happens in one step. When just intervals are broadcast joining happens in two steps.</p>
+<p>By default the parameter is set to 10240 kB</p>
+<p>Parameter is set via coniguration:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.setConf(&quot;spark.biodatageeks.rangejoin.maxBroadcastSize&quot;, (10*(1024*1024)).toString)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usejoinorder">
+<h3>4.4.4&nbsp;&nbsp;&nbsp;useJoinOrder<a class="headerlink" href="#usejoinorder" title="Permalink to this headline">¶</a></h3>
+<p>If this parameter is set to FALSE the algorithm itself decides which table is used for broadcasting. It performs row counting on both tables and chooses smaller one.</p>
+<p>To achieve even better performance you can set this parameter to TRUE. In this case, the algorithm does not check table sizes but blindly broadcasts first table.  You should use this parameter if you know table sizes beforehand</p>
+<p>By default the parameter is set to false.</p>
+<p>Parameter is set via coniguration:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spark.sqlContext.setConf(&quot;spark.biodatageeks.rangejoin.useJoinOrder&quot;, &quot;true&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../usecases/usecases.html" class="btn btn-neutral float-right" title="5   Usecases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../usage/usage.html" class="btn btn-neutral" title="3   Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, biodatageeks.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3-SNAPSHOT',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

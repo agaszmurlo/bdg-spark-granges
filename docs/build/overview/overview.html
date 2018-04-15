@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2   Overview &mdash; bdg-sequila 0.3-SNAPSHOT documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="bdg-sequila 0.3-SNAPSHOT documentation" href="../index.html"/>
+        <link rel="next" title="3   Usage" href="../usage/usage.html"/>
+        <link rel="prev" title="1   Quickstart" href="../quickstart/quickstart.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> bdg-sequila
+          
+
+          
+            
+            <img src="../_static/sequila.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3-SNAPSHOT
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/quickstart.html">1&nbsp;&nbsp;&nbsp;Quickstart</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2&nbsp;&nbsp;&nbsp;Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#motivation">2.1&nbsp;&nbsp;&nbsp;Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solution-overview">2.2&nbsp;&nbsp;&nbsp;Solution overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#algorithm">2.3&nbsp;&nbsp;&nbsp;Algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">2.4&nbsp;&nbsp;&nbsp;Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accuracy">2.4.1&nbsp;&nbsp;&nbsp;Accuracy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-tests">2.4.2&nbsp;&nbsp;&nbsp;Performance tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#repositories">2.5&nbsp;&nbsp;&nbsp;Repositories</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage/usage.html">3&nbsp;&nbsp;&nbsp;Usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../function/function.html">4&nbsp;&nbsp;&nbsp;SeQuiLa API</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/usecases.html">5&nbsp;&nbsp;&nbsp;Usecases</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../citation/citation.html">6&nbsp;&nbsp;&nbsp;License and citation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bdg-sequila</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>2&nbsp;&nbsp;&nbsp;Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/overview/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <a href="https://github.com/ZSI-Bio/bdg-sequila"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a><blockquote>
+<div></div></blockquote>
+<div class="section" id="overview">
+<h1>2&nbsp;&nbsp;&nbsp;Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>2.1&nbsp;&nbsp;&nbsp;Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>Motivation for implementing SeQuiLa was providing both elastic, fast and most importantly scalable solution for performing range join queries on genomic datasets. Range joins are bread and butter for NGS analysis but high volume of data make them very slow or even failing to compute.</p>
+<p>SeQuiLa is elastic - since it’s SQL queries that are run upon datasets, its fast - due to efficient IntervalTree algorithm usage with additional optimizations and it’s scalable - processing time decreases when run on Spark cluster.</p>
+</div>
+<div class="section" id="solution-overview">
+<h2>2.2&nbsp;&nbsp;&nbsp;Solution overview<a class="headerlink" href="#solution-overview" title="Permalink to this headline">¶</a></h2>
+<p>SeQuiLa is running upon Apache Spark execution engine. At high level it allows data analyst to write custom SQL queries that involve range joins on two datasets. Additional strategy injected into Spark guarantees good performance level.</p>
+<img alt="../_images/sequila.png" src="../_images/sequila.png" />
+<p>But hey, you don’t need to know Spark or Scala to use SeQuiLa.</p>
+<p>SeQuiLa can be easily integrated in your existing processing pipeline. And this is it’s essential feature. Whether you prefer to do your analysis via commandline tools or from spark-shell or only inject efficient range joins into your exisiting Spark or non-Spark application - SeQuiLa is there for you.</p>
+<p>For details see: <a class="reference internal" href="../usage/usage.html"><span class="doc">3&nbsp;&nbsp;&nbsp;Usage</span></a></p>
+</div>
+<div class="section" id="algorithm">
+<h2>2.3&nbsp;&nbsp;&nbsp;Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
+<p>SeQuiLa’s range joins are based on IntervalTree algorithm.</p>
+<p>&lt;TODO&gt; … More on algorithm and optimizations</p>
+</div>
+<div class="section" id="tests">
+<h2>2.4&nbsp;&nbsp;&nbsp;Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="accuracy">
+<h3>2.4.1&nbsp;&nbsp;&nbsp;Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h3>
+<p>SeQuiLa’s results were tested for compatibility with GRganges R package. It achieved 100% accuracy rate.</p>
+</div>
+<div class="section" id="performance-tests">
+<h3>2.4.2&nbsp;&nbsp;&nbsp;Performance tests<a class="headerlink" href="#performance-tests" title="Permalink to this headline">¶</a></h3>
+<p>During performance testing phase we focused on similar tools as well as compared our strategy against default Spark strategy used for genomic interval queries.</p>
+</div>
+</div>
+<div class="section" id="repositories">
+<h2>2.5&nbsp;&nbsp;&nbsp;Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h2>
+<p>You can find SeQuiLa publicly available in following repositories:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>GitHub</td>
+<td><a class="reference external" href="https://github.com/ZSI-Bio/bdg-sequila">https://github.com/ZSI-Bio/bdg-sequila</a></td>
+</tr>
+<tr class="row-even"><td>Maven</td>
+<td><a class="reference external" href="https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/">https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/</a></td>
+</tr>
+<tr class="row-odd"><td>Docker Hub</td>
+<td><a class="reference external" href="https://hub.docker.com/r/biodatageeks/bdg-sequila/">https://hub.docker.com/r/biodatageeks/bdg-sequila/</a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Repo</th>
+<th class="head">Link</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GitHub</td>
+<td><a class="reference external" href="https://github.com/ZSI-Bio/bdg-sequila">https://github.com/ZSI-Bio/bdg-sequila</a></td>
+</tr>
+<tr class="row-odd"><td>Maven</td>
+<td><a class="reference external" href="https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/">https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/</a></td>
+</tr>
+<tr class="row-even"><td>Docker Hub</td>
+<td><a class="reference external" href="https://hub.docker.com/r/biodatageeks/bdg-sequila/">https://hub.docker.com/r/biodatageeks/bdg-sequila/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../usage/usage.html" class="btn btn-neutral float-right" title="3   Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../quickstart/quickstart.html" class="btn btn-neutral" title="1   Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, biodatageeks.org.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3-SNAPSHOT',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
