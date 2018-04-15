@@ -27,6 +27,7 @@ author = u'biodatageeks.org'
 version = u'0.3-SNAPSHOT'
 # The full version, including alpha/beta/rc tags
 release = u'0.3-SNAPSHOT'
+scv_greatest_tag = True
 
 project_name = u'bdg-sequila'
 
