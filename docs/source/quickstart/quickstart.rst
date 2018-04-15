@@ -4,8 +4,6 @@
 Quickstart 
 ==========
 
-Current |version| , current |project_name|
-
 
 SeQuiLa is perfect for quick, ad-hoc analysis. Get ready for quickstart with SeQuiLa.
 

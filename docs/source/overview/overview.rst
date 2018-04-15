@@ -4,8 +4,6 @@
 Overview
 ========
 
-Current project name is |project_name|, current version is |version|.
-
 Motivation 
 ##########
 
