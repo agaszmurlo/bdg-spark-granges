@@ -63,3 +63,11 @@ You can find SeQuiLa publicly available in following repositories:
 +------------+-----------------------------------------------------------------------+
 
 
+
+==========   =====================================================================  
+Repo         Link
+==========   =====================================================================
+GitHub       `<https://github.com/ZSI-Bio/bdg-sequila>`_
+Maven        `<https://zsibio.ii.pw.edu.pl/nexus/repository/maven-releases/>`_ 
+Docker Hub   `<https://hub.docker.com/r/biodatageeks/bdg-sequila/>`_
+==========   ===================================================================== 
