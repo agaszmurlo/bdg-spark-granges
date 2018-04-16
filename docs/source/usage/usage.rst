@@ -30,9 +30,9 @@ Sample usage of SeQuiLa wrapped in docker container's scripts. The snippet below
 
    cd  /data/sequila
 
-   wget http://.../NA12878.slice.bam
+   wget http://biodatageeks.org/sequila/data/NA12878.slice.bam
 
-   wget http://.../tgp_exome_hg18.saf
+   wget http://biodatageeks.org/sequila/data/tgp_exome_hg18.saf
 
    docker run --rm -it -p 4040:4040 \ 
       -v /data/sequila:/data \ 
