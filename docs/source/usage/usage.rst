@@ -6,7 +6,7 @@ Usage
 
 SeQuiLa can be used in different ways. Specifically it supports ad-hoc research, which is typically focused on quick analysis on files. Depending on your preferences you can use predefined scripts (findOverlaps and featureCounts) or write your own code snippets within spark-shell or our bdg-shell. Additionally SeQuiLa also can be used along with your existing applications written in Scala/Spark, R or any other language/platform. Please see details below.
 
-.. figure:: integration.*
+.. figure:: usage_patterns.*
 
 Ad-hoc analysis
 #################
